@@ -1,0 +1,159 @@
+@import "variables.less"; // setup styles for page
+@import "../../../common-files/dev/less/lesshat.less"; // useful mixins, see http://lesshat.com/
+@import "../../../common-files/dev/less/mixins.less"; // my mixins
+@import "../../../common-files/dev/less/page-styles.less"; // main styles for template
+
+// own styles
+.rating {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    height: 20px;
+
+    li {
+        display: block;
+        width: 20px;
+        height: 20px;
+        float: right;
+        text-indent: -9999px;
+        cursor: pointer;
+        background: url("img/stars.png");
+
+        &.current {
+            display: none;
+        }
+    }
+
+    &.rating-hover {
+        li {
+            &:hover,
+            &:hover ~ li{
+                /* !important необходимо чтобы при наведении на активный элемент hover был приоритетнее, можете убрать его и посмотреть как демо будет работать без него*/
+                background-position: 0 -20px !important;
+            }
+        }
+    }
+
+    &.rating-active {
+        li {
+            &.active,
+            &.active ~ li{
+                background-position: 0 -40px;
+            }
+        }
+    }
+
+    &.show-current{
+        position: relative;
+
+        li {
+            cursor: default;
+
+            &.current {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+                width: 100%;
+                background-position: 0 -60px;
+
+                &:hover,
+                &:hover ~ li{
+                    background-position: 0 -60px !important;
+                }
+
+                span {
+                    display: block;
+                    height: 20px;
+                    width: 0;
+                    background: inherit;
+                    background-position: 0 -40px;
+                    .transition(~"width 0.8s ease-in");
+                }
+            }
+        }
+    }
+}
+
+
+.rating-half {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    height: 20px;
+
+    li {
+        display: block;
+        width: 10px;
+        height: 20px;
+        float: right;
+        text-indent: -9999px;
+        cursor: pointer;
+        background: url("img/stars.png") no-repeat;
+
+        &.current {
+            display: none;
+        }
+
+        /* нечетные элементы */
+        &:nth-child(odd) {
+            background-position: -10px 0;
+        }
+
+        /* четные при наведении и все предыдущие четные*/
+        &:nth-child(even):hover,
+        &:nth-child(even):hover ~  li:nth-child(even){
+            background-position: 0 -20px;
+        }
+
+        /* четные при наведении и все предыдущие нечетные*/
+        &:nth-child(even):hover ~  li:nth-child(odd){
+            background-position: -10px -20px;
+        }
+
+        /* нечетные при наведении и все предыдущие нечетные*/
+        &:nth-child(odd):hover,
+        &:nth-child(odd):hover ~ li:nth-child(odd) {
+            background-position: -10px -20px;
+        }
+
+        /* нечетные при наведении и все предыдущие четные*/
+        &:nth-child(odd):hover ~ li:nth-child(even) {
+            background-position: 0 -20px;
+        }
+    }
+
+    &.show-current{
+        position: relative;
+
+        li {
+            cursor: default;
+
+            &.current {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+                width: 100%;
+                background-position: 0 -60px;
+                background-repeat: repeat-x;
+
+                &:hover,
+                &:hover ~ li {
+                    background-position: 0 -60px;
+                }
+
+                span {
+                    display: block;
+                    height: 20px;
+                    width: 0;
+                    background: inherit;
+                    background-position: 0 -40px;
+                    .transition(~"width 0.8s ease-in");
+                }
+            }
+        }
+    }
+}

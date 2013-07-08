@@ -33,7 +33,8 @@ module.exports = function(grunt) {
                     compress: true
                 },
                 files: {
-                    'articles/dummy/styles.css': 'articles/dummy/less/styles.less'
+                    'articles/dummy/styles.css': 'articles/dummy/less/styles.less',
+                    'articles/rating/styles.css': 'articles/rating/less/styles.less'
                 }
             }
         },

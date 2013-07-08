@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Звездный рейтинг</title>
+    <link rel="stylesheet" href="../../common-files/prod/css/common-styles.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div id="header">
+        <p class="clearfix">
+            <a href="http://4devs.pp.ua/a/zvezdniy-rating" class="pull-right"><i class="icon-file"></i>Перейти к статье</a>
+            <a href="https://github.com/4devs/psdcoder-demos/tree/gh-pages/articles/rating" class="pull-right"><i class="icon-github"></i>Исходники</a>
+            <a href="http://psdcoder.4devs.pp.ua"><i class="icon-user"></i>Об авторе</a>
+        </p>
+    </div>
+    <div id="main-content" class="container">
+        <h2>Демо - материалы к статье "<a href="http://4devs.pp.ua/a/zvezdniy-rating">Звездный рейтинг</a>"</h2>
+        <div class="tabs-container">
+            <ul class="tabs-nav clearfix">
+                <li class="active"><a href="#1" data-toggle="tab">Демо 1</a></li>
+                <li><a href="#2" data-toggle="tab">Демо 2</a></li>
+                <li><a href="#3" data-toggle="tab">Демо 3</a></li>
+                <li><a href="#4" data-toggle="tab">Демо 4</a></li>
+                <li><a href="#5" data-toggle="tab">Демо 5</a></li>
+            </ul>
+            <div class="tabs-content">
+                <div class="tab-pane active" id="1">
+                    <p>Просто разметка нашего рейтинга</p>
+                    <ol class="rating">
+                        <li>5</li>
+                        <li>4</li>
+                        <li>3</li>
+                        <li>2</li>
+                        <li>1</li>
+                    </ol>
+                </div>
+                <div class="tab-pane" id="2">
+                    <p>Тут мы уже добавили отображение состояния наведения</p>
+                    <ol class="rating rating-hover">
+                        <li>5</li>
+                        <li class="active">4</li>
+                        <li>3</li>
+                        <li>2</li>
+                        <li>1</li>
+                    </ol>
+                </div>
+                <div class="tab-pane" id="3">
+                    <p>Ну а тут уже можно показать текущий рейтинг, но достаточно в примитивном виде (в виде целых чисел)</p>
+                    <ol class="rating rating-hover rating-active">
+                        <li>5</li>
+                        <li>4</li>
+                        <li class="active">3</li>
+                        <li>2</li>
+                        <li>1</li>
+                    </ol>
+                </div>
+                <div class="tab-pane" id="4">
+                    <p>Окончательный вариант с процентным рейтингом</p>
+                    <ol class="rating rating-hover rating-active show-current" id="rating-js">
+                        <li>5</li>
+                        <li>4</li>
+                        <li>3</li>
+                        <li>2</li>
+                        <li>1</li>
+                        <li class="current"><span></span></li>
+                    </ol>
+                </div>
+                <div class="tab-pane" id="5">
+                    <p>Половинчатый рейтинг</p>
+                    <ol class="rating-half show-current"  id="rating-half-js">
+                        <li>10</li>
+                        <li>9</li>
+                        <li>8</li>
+                        <li>7</li>
+                        <li>6</li>
+                        <li>5</li>
+                        <li>4</li>
+                        <li>3</li>
+                        <li>2</li>
+                        <li>1</li>
+                        <li class="current"><span></span></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="../../common-files/prod/js/scripts.min.js"></script>
+<script src="js/scripts.js"></script>
+</html>

@@ -3,14 +3,12 @@
         var currentHash = window.location.hash,
             $tabs = $('.tabs-container');
 
-        if (currentHash === '') {
-            return;
-        }
+        if (currentHash !== '') {
+            var $link = $('a[href="' + currentHash + '"]', $tabs);
 
-        var $link = $('a[href="' + currentHash + '"]', $tabs);
-
-        if ($link.length > 0) {
-            $link.tab('show');
+            if ($link.length > 0) {
+                $link.tab('show');
+            }
         }
 
         $tabs.on('click', 'a', function() {
